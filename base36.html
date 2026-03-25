@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>URL Check Mode</title>
+  <style>
+    body {
+      background: #050608;
+      color: #00ff9c;
+      font-family: "Courier New", monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .terminal {
+      border: 1px solid #00ff9c;
+      padding: 20px 30px;
+      max-width: 700px;
+    }
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid #00ff9c;
+      color: #00ff9c;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn:hover {
+      background: #00ff9c;
+      color: #050608;
+    }
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      background: #00ff9c;
+      animation: blink 1s step-start infinite;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      50% { background: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <pre>URL CHECK MODE
+--------------
+Token detected: bASe36xQpL9
+
+Hint: "BASE 36"
+
+Instruction:
+  - Identify the readable segment in the token.
+  - Use it to interpret the digits.
+
+&gt; awaiting input<span class="cursor"></span>
+    </pre>
+    <a class="btn" href="decode.html">DECODE</a>
+  </div>
+</body>
+</html>
