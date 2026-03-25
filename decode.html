@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Decoded Output</title>
+  <title>Decode Complete</title>
   <style>
     body {
       background: #050608;
@@ -13,11 +13,13 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      overflow: hidden;
     }
     .terminal {
       border: 1px solid #00ff9c;
       padding: 20px 30px;
       max-width: 600px;
+      transition: all 0.3s ease;
     }
     .code {
       font-size: 26px;
@@ -29,11 +31,27 @@
       font-size: 13px;
       color: #7cffc8;
     }
+
+    /* Glitch effect */
+    @keyframes glitch {
+      0% { transform: translate(0,0); }
+      20% { transform: translate(-3px,2px); }
+      40% { transform: translate(3px,-2px); }
+      60% { transform: translate(-2px,1px); }
+      80% { transform: translate(2px,-1px); }
+      100% { transform: translate(0,0); }
+    }
+
+    .glitching {
+      animation: glitch 0.15s infinite;
+      filter: blur(2px);
+    }
   </style>
 </head>
 <body>
-  <div class="terminal">
-    <pre>DECODE COMPLETE
+
+  <div id="box" class="terminal">
+<pre>DECODE COMPLETE
 ----------------</pre>
     <div>Decoded output:</div>
     <div class="code">46809</div>
@@ -42,5 +60,18 @@
       "Five digits. Looks like a physical access code."
     </div>
   </div>
+
+  <script>
+    // Start glitch effect after 3 seconds
+    setTimeout(() => {
+      document.getElementById('box').classList.add('glitching');
+    }, 3000);
+
+    // Break the screen and redirect after 6 seconds
+    setTimeout(() => {
+      window.location.href = "escape.html";
+    }, 6000);
+  </script>
+
 </body>
 </html>
