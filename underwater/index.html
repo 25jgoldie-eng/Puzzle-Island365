@@ -1,0 +1,89 @@
+<!-- =========================
+     underwater/index.html
+========================= -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Submerged Storage Terminal</title>
+  <style>
+    body {
+      background: #001018;
+      color: #7ff0ff;
+      font-family: "Courier New", monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .terminal {
+      border: 1px solid #7ff0ff;
+      padding: 20px 30px;
+      max-width: 700px;
+    }
+    .note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #b8fbff;
+    }
+    input[type="text"] {
+      margin-top: 15px;
+      padding: 6px;
+      width: 80%;
+      background: #000c12;
+      border: 1px solid #7ff0ff;
+      color: #7ff0ff;
+      font-family: "Courier New", monospace;
+    }
+    .btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid #7ff0ff;
+      color: #7ff0ff;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      background: transparent;
+    }
+    .btn:hover {
+      background: #7ff0ff;
+      color: #001018;
+    }
+    .result {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+<pre>SUBMERGED STORAGE TERMINAL
+--------------------------
+Status: LOCKED
+
+To access fuel reserves, enter the 4-word authorization phrase.
+
+Hint: "What did the tunnel say?"
+</pre>
+    <input type="text" id="phrase" placeholder="enter 4-word phrase here">
+    <button class="btn" onclick="checkPhrase()">SUBMIT</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function checkPhrase() {
+      const input = document.getElementById('phrase').value.trim().toLowerCase();
+      const correct = "no power no hardware";
+      const result = document.getElementById('result');
+
+      if (input === correct) {
+        result.innerHTML = "AUTHORIZATION ACCEPTED<br>Fuel released to tunnel generator.<br><br>Return to the tunnel.";
+      } else {
+        result.textContent = "Authorization failed. Phrase mismatch.";
+      }
+    }
+  </script>
+</body>
+</html>
