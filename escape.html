@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Island Navigation</title>
+  <style>
+    body {
+      background: #01070c;
+      color: #9fdcff;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .mapbox {
+      border: 1px solid #9fdcff;
+      padding: 25px 35px;
+      max-width: 700px;
+      background: #020b14;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 22px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b8eaff;
+    }
+
+    .desc {
+      margin-bottom: 20px;
+      color: #c4e7ff;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .location {
+      margin: 12px 0;
+      padding: 10px 14px;
+      border: 1px solid #9fdcff;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #9fdcff;
+      text-decoration: none;
+      display: block;
+      width: fit-content;
+    }
+
+    .location:hover {
+      background: #9fdcff;
+      color: #020b14;
+    }
+
+    .note {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #7fb8d4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mapbox">
+    <h1>ISLAND NAVIGATION SYSTEM</h1>
+
+    <div class="desc">
+      The terminal flickers violently, then stabilizes into a crude top‑down interface.  
+      A synthetic voice whispers through the static:  
+      <br><br>
+      <em>“You are not alone on this island.”</em>
+      <br><br>
+      Several locations pulse faintly on the display.
+    </div>
+
+    <a class="location" href="#">Shack</a>
+    <a class="location" href="#">Lighthouse</a>
+    <a class="location" href="#">Cave Entrance</a>
+    <a class="location" href="#">Old Tunnel</a>
+    <a class="location" href="#">Forest Path</a>
+    <a class="location" href="#">Abandoned Dock</a>
+
+    <div class="note">
+      (These links don’t go anywhere yet — you can turn each one into a new puzzle page.)
+    </div>
+  </div>
+
+</body>
+</html>
